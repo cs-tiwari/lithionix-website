@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { COMPANY_INFO } from "@/lib/constants";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const projects = [

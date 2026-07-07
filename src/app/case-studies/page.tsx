@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { COMPANY_INFO } from "@/lib/constants";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 const caseStudies = [

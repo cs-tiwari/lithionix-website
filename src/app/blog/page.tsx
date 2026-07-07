@@ -3,7 +3,7 @@ import { COMPANY_INFO } from "@/lib/constants";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
-import Link from "next/link";
+
 
 const blogPosts = [
   {

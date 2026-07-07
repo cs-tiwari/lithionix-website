@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { COMPANY_INFO } from "@/lib/constants";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);

@@ -1,10 +1,8 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {

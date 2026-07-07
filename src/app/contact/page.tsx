@@ -1,11 +1,8 @@
 import { Metadata } from "next";
 import { COMPANY_INFO } from "@/lib/constants";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { COMPANY_INFO, TECHNOLOGIES } from "@/lib/constants";
+import { COMPANY_INFO } from "@/lib/constants";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu } from "lucide-react";
