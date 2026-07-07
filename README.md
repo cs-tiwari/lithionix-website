@@ -51,6 +51,9 @@ cp .env.example .env.local
 
 4. Update environment variables in `.env.local`:
 - `NEXT_PUBLIC_SITE_URL`: Your domain name
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`: Google Search Console verification code
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`: Google Analytics 4 Measurement ID
+- `NEXT_PUBLIC_CLARITY_PROJECT_ID`: Microsoft Clarity project ID
 - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`: EmailJS service ID (for contact form)
 - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`: EmailJS template ID
 - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`: EmailJS public key
@@ -135,11 +138,13 @@ Edit `src/app/layout.tsx`:
 - OpenGraph and Twitter Card metadata
 - Google verification code
 
-### Update Contact Form
-Edit `src/components/forms/ContactForm.tsx`:
-- Configure EmailJS credentials
-- Add form validation with Zod
-- Customize form fields
+### Contact Form
+The contact form is production-ready and reads EmailJS credentials from environment variables:
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+
+If EmailJS is not configured, the form shows a user-friendly message with the support email.
 
 ### Update Colors
 Edit `src/app/globals.css`:
@@ -168,10 +173,22 @@ The following legal pages are included for KYC compliance:
 4. Update `.env.local` with credentials
 5. Uncomment EmailJS code in `ContactForm.tsx`
 
-### Google Analytics (Optional)
-1. Create GA4 property
-2. Add tracking ID to `.env.local`
-3. Add analytics script to layout
+### Google Analytics 4
+This project includes a reusable `GoogleAnalytics` component.
+1. Create GA4 property in [Google Analytics](https://analytics.google.com)
+2. Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` to `.env.local`
+3. Analytics loads automatically in production only
+
+### Microsoft Clarity
+This project includes a reusable `MicrosoftClarity` component.
+1. Create project at [Microsoft Clarity](https://clarity.microsoft.com)
+2. Add `NEXT_PUBLIC_CLARITY_PROJECT_ID` to `.env.local`
+3. Clarity loads automatically in production only
+
+### Google Search Console
+1. Verify site ownership in [Google Search Console](https://search.google.com/search-console)
+2. Add `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` to `.env.local`
+3. Verification meta tag is included automatically
 
 ### Google Maps (Optional)
 1. Get API key from Google Cloud Console
