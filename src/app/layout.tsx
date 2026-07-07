@@ -15,6 +15,49 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: COMPANY_INFO.name,
+  url: "https://lithionixgroup.in",
+  logo: "https://lithionixgroup.in/logo.png",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: COMPANY_INFO.email.support,
+    telephone: COMPANY_INFO.phone,
+    contactType: "Customer Service",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: COMPANY_INFO.address.street,
+    addressLocality: COMPANY_INFO.address.city,
+    addressRegion: COMPANY_INFO.address.state,
+    postalCode: COMPANY_INFO.address.pincode,
+    addressCountry: COMPANY_INFO.address.country,
+  },
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: COMPANY_INFO.name,
+  image: "https://lithionixgroup.in/logo.png",
+  "@id": "https://lithionixgroup.in/#organization",
+  url: "https://lithionixgroup.in",
+  telephone: COMPANY_INFO.phone,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: COMPANY_INFO.address.street,
+    addressLocality: COMPANY_INFO.address.city,
+    addressRegion: COMPANY_INFO.address.state,
+    postalCode: COMPANY_INFO.address.pincode,
+    addressCountry: COMPANY_INFO.address.country,
+  },
+  openingHours: "Mo-Sa 09:00-18:00",
+  priceRange: "$$",
+  description: COMPANY_INFO.tagline,
+};
+
 export const metadata: Metadata = {
   title: {
     default: `${COMPANY_INFO.name} - ${COMPANY_INFO.tagline}`,
@@ -113,6 +156,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
