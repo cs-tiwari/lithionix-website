@@ -23,6 +23,7 @@ export const COMPANY_INFO = {
   },
   gst: "05AALFL3596M1ZO",
   cin: "XXXXXXXXXXXXX",
+  llpin: "ACF-5015",
 } as const;
 
 export const SERVICES = [
