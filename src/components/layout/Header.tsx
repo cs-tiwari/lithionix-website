@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { COMPANY_INFO, NAVIGATION_ITEMS } from "@/lib/constants";
@@ -47,9 +48,11 @@ export function Header() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <img
+            <Image
               src="/logo.png"
               alt={`${COMPANY_INFO.name} Logo`}
+              width={40}
+              height={40}
               className="w-10 h-10 object-contain rounded-lg"
             />
             <div className="flex flex-col">

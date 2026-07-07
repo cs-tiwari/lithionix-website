@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { COMPANY_INFO, FOOTER_LINKS } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   Mail,
@@ -19,9 +19,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img
+              <Image
                 src="/logo.png"
                 alt={`${COMPANY_INFO.name} Logo`}
+                width={40}
+                height={40}
                 className="w-10 h-10 object-contain rounded-lg"
               />
               <div className="flex flex-col">
