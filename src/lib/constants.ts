@@ -210,12 +210,7 @@ export const NAVIGATION_ITEMS = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Industries", href: "/industries" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Technologies", href: "/technologies" },
-  { name: "Careers", href: "/careers" },
   { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -230,7 +225,6 @@ export const FOOTER_LINKS = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Careers", href: "/careers" },
     { name: "Blog", href: "/blog" },
     { name: "Contact Us", href: "/contact" },
   ],
@@ -240,5 +234,6 @@ export const FOOTER_LINKS = {
     { name: "Refund & Cancellation Policy", href: "/refund-cancellation-policy" },
     { name: "Shipping & Delivery Policy", href: "/shipping-delivery-policy" },
     { name: "Cookie Policy", href: "/cookie-policy" },
+    { name: "Disclaimer", href: "/disclaimer" },
   ],
 };

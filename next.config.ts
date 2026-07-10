@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         destination: "/shipping-delivery-policy",
         permanent: true,
       },
+      {
+        source: "/checkout-page",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };

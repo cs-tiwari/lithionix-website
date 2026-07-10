@@ -14,6 +14,16 @@ Disallow: /api/
 Disallow: /dashboard/
 Disallow: /admin/
 Disallow: /private/
+Disallow: /checkout-page/
+Disallow: /solutions/
+Disallow: /industries/
+Disallow: /case-studies/
+Disallow: /technologies/
+Disallow: /careers/
+Disallow: /disclaimer/
+Disallow: /terms/
+Disallow: /refund-policy/
+Disallow: /shipping-delivery/
 
 # Sitemap
 Sitemap: ${baseUrl}/sitemap.xml
@@ -24,12 +34,7 @@ Crawl-delay: 10
 # Important pages to index
 Allow: /about
 Allow: /services
-Allow: /solutions
-Allow: /industries
 Allow: /portfolio
-Allow: /case-studies
-Allow: /technologies
-Allow: /careers
 Allow: /blog
 Allow: /contact`;
 
