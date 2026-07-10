@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -65,19 +66,23 @@ export default function ContactForm() {
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
       {message && (
-        <div
-          className={`p-4 rounded-md text-sm ${
+        <motion.div
+          className={`p-4 rounded-xl text-sm backdrop-blur-sm ${
             message.type === "success"
-              ? "bg-green-50 text-green-800 border border-green-200"
-              : "bg-red-50 text-red-800 border border-red-200"
+              ? "bg-green-50/80 text-green-800 border border-green-200"
+              : "bg-red-50/80 text-red-800 border border-red-200"
           }`}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
         >
           {message.text}
-        </div>
+        </motion.div>
       )}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-slate-900">
+          <label htmlFor="name" className="text-sm font-semibold text-slate-900">
             Full Name *
           </label>
           <Input
@@ -85,12 +90,12 @@ export default function ContactForm() {
             name="name"
             placeholder="John Doe"
             required
-            className="w-full"
+            className="w-full border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
           />
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium text-slate-900">
+          <label htmlFor="email" className="text-sm font-semibold text-slate-900">
             Email Address *
           </label>
           <Input
@@ -99,14 +104,14 @@ export default function ContactForm() {
             type="email"
             placeholder="john@example.com"
             required
-            className="w-full"
+            className="w-full border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium text-slate-900">
+          <label htmlFor="phone" className="text-sm font-semibold text-slate-900">
             Phone Number
           </label>
           <Input
@@ -114,12 +119,12 @@ export default function ContactForm() {
             name="phone"
             type="tel"
             placeholder="+91-XXXXXXXXXX"
-            className="w-full"
+            className="w-full border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
           />
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="subject" className="text-sm font-medium text-slate-900">
+          <label htmlFor="subject" className="text-sm font-semibold text-slate-900">
             Subject *
           </label>
           <Input
@@ -127,19 +132,19 @@ export default function ContactForm() {
             name="subject"
             placeholder="Project Inquiry"
             required
-            className="w-full"
+            className="w-full border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
           />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="service" className="text-sm font-medium text-slate-900">
+        <label htmlFor="service" className="text-sm font-semibold text-slate-900">
           Service Interested In
         </label>
         <select
           id="service"
           name="service"
-          className="w-full px-3 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-all bg-white"
         >
           <option value="">Select a service</option>
           <option value="web-development">Web Development</option>
@@ -153,7 +158,7 @@ export default function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-slate-900">
+        <label htmlFor="message" className="text-sm font-semibold text-slate-900">
           Message *
         </label>
         <Textarea
@@ -162,7 +167,7 @@ export default function ContactForm() {
           placeholder="Tell us about your project..."
           rows={6}
           required
-          className="w-full"
+          className="w-full border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all resize-none"
         />
       </div>
 
@@ -170,9 +175,16 @@ export default function ContactForm() {
         type="submit"
         size="lg"
         disabled={isSubmitting}
-        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 disabled:opacity-50"
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-base font-semibold"
       >
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? (
+          <>
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
+            Sending...
+          </>
+        ) : (
+          "Send Message"
+        )}
       </Button>
     </form>
   );

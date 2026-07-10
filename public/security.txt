@@ -1,0 +1,9 @@
+Contact: https://lithionixgroup.in/contact
+Contact: support@lithionixgroup.in
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://lithionixgroup.in/.well-known/security.txt
+
+Policy:
+https://lithionixgroup.in/privacy-policy
+https://lithionixgroup.in/terms

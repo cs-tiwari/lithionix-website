@@ -13,7 +13,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-200" role="contentinfo">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" role="contentinfo">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Company Info */}
@@ -27,22 +27,22 @@ export function Footer() {
                 className="w-10 h-10 object-contain rounded-lg"
               />
               <div className="flex flex-col">
-                <span className="font-bold text-lg leading-tight text-slate-900">
+                <span className="font-bold text-lg leading-tight text-white">
                   {COMPANY_INFO.name}
                 </span>
-                <span className="text-xs text-slate-600">Software LLP</span>
+                <span className="text-xs text-slate-400">Software LLP</span>
               </div>
             </div>
-            <p className="text-slate-600 mb-4 max-w-md">
+            <p className="text-slate-300 mb-6 max-w-md">
               {COMPANY_INFO.tagline}. We specialize in delivering innovative software solutions that drive business growth and digital transformation.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a
                 href={COMPANY_INFO.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-slate-600 hover:text-blue-600 transition-colors"
+                className="p-2 rounded-lg bg-white/5 hover:bg-blue-600 text-slate-400 hover:text-white transition-all duration-300"
               >
                 <ExternalLink className="h-5 w-5" />
               </a>
@@ -51,7 +51,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-slate-600 hover:text-blue-600 transition-colors"
+                className="p-2 rounded-lg bg-white/5 hover:bg-blue-600 text-slate-400 hover:text-white transition-all duration-300"
               >
                 <ExternalLink className="h-5 w-5" />
               </a>
@@ -60,7 +60,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-slate-600 hover:text-pink-600 transition-colors"
+                className="p-2 rounded-lg bg-white/5 hover:bg-pink-600 text-slate-400 hover:text-white transition-all duration-300"
               >
                 <ExternalLink className="h-5 w-5" />
               </a>
@@ -69,7 +69,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="text-slate-600 hover:text-slate-900 transition-colors"
+                className="p-2 rounded-lg bg-white/5 hover:bg-slate-700 text-slate-400 hover:text-white transition-all duration-300"
               >
                 <ExternalLink className="h-5 w-5" />
               </a>
@@ -78,13 +78,13 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-slate-900 mb-4">Services</h3>
+            <h3 className="font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.services.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-600 transition-colors text-sm"
+                    className="text-slate-300 hover:text-blue-400 transition-colors text-sm hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -95,13 +95,13 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-slate-900 mb-4">Company</h3>
+            <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-600 transition-colors text-sm"
+                    className="text-slate-300 hover:text-blue-400 transition-colors text-sm hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -112,13 +112,13 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold text-slate-900 mb-4">Resources</h3>
+            <h3 className="font-semibold text-white mb-4">Resources</h3>
             <ul className="space-y-2.5">
               {FOOTER_LINKS.resources.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-600 transition-colors text-sm"
+                    className="text-slate-300 hover:text-blue-400 transition-colors text-sm hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </a>
@@ -128,39 +128,39 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8 md:my-12" />
+        <Separator className="my-8 md:my-12 bg-slate-700/50" />
 
         {/* Contact Info & Business Details */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="flex items-start space-x-3">
-            <Mail className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <Mail className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-sm font-medium text-slate-900">Email</p>
+              <p className="text-sm font-medium text-white">Email</p>
               <a
                 href={`mailto:${COMPANY_INFO.email.support}`}
-                className="text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                className="text-sm text-slate-300 hover:text-blue-400 transition-colors"
               >
                 {COMPANY_INFO.email.support}
               </a>
             </div>
           </div>
           <div className="flex items-start space-x-3">
-            <Phone className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <Phone className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-sm font-medium text-slate-900">Phone</p>
+              <p className="text-sm font-medium text-white">Phone</p>
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                className="text-sm text-slate-300 hover:text-blue-400 transition-colors"
               >
                 {COMPANY_INFO.phone}
               </a>
             </div>
           </div>
           <div className="flex items-start space-x-3">
-            <MapPin className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+            <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-sm font-medium text-slate-900">Address</p>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm font-medium text-white">Address</p>
+              <p className="text-sm text-slate-300">
                 {COMPANY_INFO.address.street}, {COMPANY_INFO.address.city},{" "}
                 {COMPANY_INFO.address.state} - {COMPANY_INFO.address.pincode}
               </p>
@@ -168,21 +168,21 @@ export function Footer() {
           </div>
         </div>
 
-        <Separator className="mb-8" />
+        <Separator className="mb-8 bg-slate-700/50" />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-slate-400">
             &copy; {currentYear} {COMPANY_INFO.name}. All rights reserved.
           </p>
           <div className="flex items-center space-x-6">
-            <span className="text-xs text-slate-500">
+            <span className="text-xs text-slate-400">
               GST: {COMPANY_INFO.gst}
             </span>
-            <span className="text-xs text-slate-500">
-              CIN: {COMPANY_INFO.cin}
+            <span className="text-xs text-slate-400">
+              LLPIN: {COMPANY_INFO.llpin}
             </span>
-            <div className="flex items-center space-x-1 text-xs text-slate-500">
+            <div className="flex items-center space-x-1 text-xs text-slate-400">
               <Clock className="h-3 w-3" />
               <span>{COMPANY_INFO.officeHours}</span>
             </div>
@@ -190,41 +190,33 @@ export function Footer() {
         </div>
 
         {/* KYC Compliance Section */}
-        <div className="mt-8 p-6 bg-white rounded-lg border border-slate-200">
-          <h3 className="font-semibold text-slate-900 mb-3 text-sm">
+        <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+          <h3 className="font-semibold text-white mb-4 text-sm">
             Business Information
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-600">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-300">
             <div>
-              <span className="block font-medium text-slate-700">
-                Company Name
-              </span>
+              <span className="block font-medium text-slate-200 mb-1">Company Name</span>
               {COMPANY_INFO.name}
             </div>
             <div>
-              <span className="block font-medium text-slate-700">GSTIN</span>
+              <span className="block font-medium text-slate-200 mb-1">GSTIN</span>
               {COMPANY_INFO.gst}
             </div>
             <div>
-              <span className="block font-medium text-slate-700">CIN</span>
-              {COMPANY_INFO.cin}
+              <span className="block font-medium text-slate-200 mb-1">LLPIN</span>
+              {COMPANY_INFO.llpin}
             </div>
             <div>
-              <span className="block font-medium text-slate-700">
-                Business Email
-              </span>
+              <span className="block font-medium text-slate-200 mb-1">Business Email</span>
               {COMPANY_INFO.email.support}
             </div>
             <div>
-              <span className="block font-medium text-slate-700">
-                Sales Email
-              </span>
+              <span className="block font-medium text-slate-200 mb-1">Sales Email</span>
               {COMPANY_INFO.email.sales}
             </div>
             <div>
-              <span className="block font-medium text-slate-700">
-                Office Hours
-              </span>
+              <span className="block font-medium text-slate-200 mb-1">Office Hours</span>
               {COMPANY_INFO.officeHours}
             </div>
           </div>

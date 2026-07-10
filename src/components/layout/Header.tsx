@@ -28,10 +28,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200"
-          : "bg-transparent"
+          ? "bg-white/90 backdrop-blur-xl shadow-lg border-b border-blue-100/50"
+          : "bg-slate-900/80 backdrop-blur-md"
       }`}
       role="banner"
     >
@@ -55,35 +55,37 @@ export function Header() {
               height={40}
               className="w-10 h-10 object-contain rounded-lg"
             />
-            <div className="flex flex-col">
-              <span
-                className={`font-bold text-lg leading-tight transition-colors ${
-                  isScrolled ? "text-slate-900" : "text-slate-900"
-                }`}
-              >
-                {COMPANY_INFO.name}
-              </span>
-              <span
-                className={`text-xs leading-tight hidden sm:block transition-colors ${
-                  isScrolled ? "text-slate-600" : "text-slate-700"
-                }`}
-              >
-                Software LLP
-              </span>
-            </div>
+              <div className="flex flex-col">
+                <span
+                  className={`font-bold text-lg leading-tight transition-colors ${
+                    isScrolled ? "text-slate-900" : "text-white"
+                  }`}
+                >
+                  {COMPANY_INFO.name}
+                </span>
+                <span
+                  className={`text-xs leading-tight hidden sm:block transition-colors ${
+                    isScrolled ? "text-slate-600" : "text-slate-300"
+                  }`}
+                >
+                  Software LLP
+                </span>
+              </div>
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-1">
             {NAVIGATION_ITEMS.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? "text-slate-700" : "text-slate-800"
+                className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
+                  isScrolled
+                    ? "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
+                    : "text-slate-200 hover:text-white hover:bg-white/10"
                 }`}
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ y: 0, scale: 1 }}
               >
                 {item.name}
               </motion.a>
@@ -98,7 +100,7 @@ export function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-2.5 font-semibold">
                 Get Started
               </Button>
             </motion.a>

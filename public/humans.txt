@@ -1,0 +1,28 @@
+/* HUMAN-STANDARD-XML */
+STANDARD:
+UTF-8 Encoding
+Semantic HTML5
+W3C Valid HTML
+W3C Valid CSS
+WCAG 2.1 AA Accessibility
+Mobile-First Design
+Responsive Layout
+Performance Optimized
+SEO Optimized
+
+SITE:
+Title: Lithionix Software LLP
+Description: Transforming Ideas into Intelligent Digital Solutions
+URL: https://lithionixgroup.in
+Author: Lithionix Software LLP
+Contact: support@lithionixgroup.in
+
+TECHNOLOGY:
+Framework: Next.js 15
+Language: TypeScript
+Styling: Tailwind CSS
+Animations: Framer Motion
+Icons: Lucide React
+Hosting: Vercel
+
+LAST-UPDATED: 2025-07-07

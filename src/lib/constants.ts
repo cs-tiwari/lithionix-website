@@ -22,7 +22,6 @@ export const COMPANY_INFO = {
     github: "https://github.com/lithionix",
   },
   gst: "05AALFL3596M1ZO",
-  cin: "XXXXXXXXXXXXX",
   llpin: "ACF-5015",
 } as const;
 
@@ -237,8 +236,9 @@ export const FOOTER_LINKS = {
   ],
   resources: [
     { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms & Conditions", href: "/terms" },
-    { name: "Refund Policy", href: "/refund-policy" },
+    { name: "Terms & Conditions", href: "/terms-conditions" },
+    { name: "Refund & Cancellation Policy", href: "/refund-cancellation-policy" },
+    { name: "Shipping & Delivery Policy", href: "/shipping-delivery-policy" },
     { name: "Cookie Policy", href: "/cookie-policy" },
   ],
 };
