@@ -12,13 +12,10 @@ export async function GET() {
     { url: baseUrl, priority: 1.0, changefreq: "daily" },
     { url: `${baseUrl}/about`, priority: 0.8, changefreq: "weekly" },
     { url: `${baseUrl}/services`, priority: 0.9, changefreq: "weekly" },
-    { url: `${baseUrl}/portfolio`, priority: 0.7, changefreq: "monthly" },
-    { url: `${baseUrl}/blog`, priority: 0.6, changefreq: "daily" },
     { url: `${baseUrl}/contact`, priority: 0.8, changefreq: "monthly" },
     { url: `${baseUrl}/privacy-policy`, priority: 0.3, changefreq: "monthly" },
     { url: `${baseUrl}/terms-conditions`, priority: 0.3, changefreq: "monthly" },
     { url: `${baseUrl}/refund-cancellation-policy`, priority: 0.3, changefreq: "monthly" },
-    { url: `${baseUrl}/shipping-delivery-policy`, priority: 0.3, changefreq: "monthly" },
     { url: `${baseUrl}/cookie-policy`, priority: 0.3, changefreq: "monthly" },
   ];
 
